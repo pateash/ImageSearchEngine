@@ -92,7 +92,11 @@ export default {
 <style>
 .searchbar {
   padding: 1rem 1.5rem!important;
-  width: 100%;
+  width: 50%;
+  float:right;
+  position: fixed;
+  top: 70px;
+  left:25%;
   box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.3);
   background: #fff;
 }

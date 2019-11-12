@@ -3,7 +3,7 @@
     <div class="container">
       <div class="navbar-brand is-inline-flex-mobile is-inline-flex-tablet">
         <div class="navbar-item" @click="onClickTitle">
-          <h2 class="is-size-3-desktop is-size-4-mobile">Vue iTunes</h2>
+          <h2 class="is-size-3-desktop is-size-4-mobile">ImageSearch</h2>
         </div>
       </div>
       <div class="navbar-end is-inline-flex-mobile is-inline-flex-tablet">
