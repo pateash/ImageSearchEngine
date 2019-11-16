@@ -205,8 +205,8 @@ export default {
   methods: {
     paginate (albums) {
       let current = this.current
-      // let perPage = this.settings.perPage
-      let perPage = 20
+      let perPage = this.settings.perPage
+      // let perPage = 20
       let from = (current * perPage) - perPage
       let to = (current * perPage)
       return albums.slice(from, to)

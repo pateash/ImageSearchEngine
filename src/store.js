@@ -14,7 +14,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    settings: { initialSearchQuery: 'eminem', searchQuery: '', panelType: 'card', bookmarkIcon: 'fa-star', perPage: '20', youtubeLink: 'false' },
+    settings: { initialSearchQuery: 'cats', searchQuery: '', panelType: 'card', bookmarkIcon: 'fa-star', perPage: '20', youtubeLink: 'false' },
     albums: [],
     albumTracks: [],
     bookmarkAlbums: [],
