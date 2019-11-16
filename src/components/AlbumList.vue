@@ -39,12 +39,12 @@
                     </div>
                   </div>
                   <footer class="card-footer">
-                      <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
-                        <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
+                      <a :href="album.links.html" target="_blank" class="card-footer-item" >
+                        <b-tooltip type="is-light" label="See Full Image" position="is-top" :active="!isMobile">
                           <i class="fas fa-external-link-alt"></i>
                         </b-tooltip>
                       </a>
-                    <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
+                    <a :href="album.urls.raw" target="_blank" class="card-footer-item" download>
                       <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
                         <i class="fas fa-download"></i>
                       </b-tooltip>
