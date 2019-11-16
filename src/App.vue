@@ -233,7 +233,9 @@ export default {
       this.$store.commit('RESET_ALBUM_TRACKS')
     },
     replaceArtworkUrlSize (albumArtwork, newSize) {
-      return albumArtwork.replace('100x100', newSize)
+      // return albumArtwork.replace('100x100', newSize)
+      // console.log(albumArtwork)
+      return albumArtwork.urls.full
     },
     toggleNavbar () {
       let scrollBarPosition = window.pageYOffset | document.body.scrollTop
