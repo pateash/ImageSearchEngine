@@ -6,7 +6,7 @@
         expanded
           v-model="searchQuery"
           :data="filteredDataArray"
-          placeholder="e.g. Eminem"
+          placeholder="e.g. Cat"
           icon="magnify"
           @select="option => selected = option"
           @keyup.enter="onClickSearch"
