@@ -41,15 +41,16 @@
                   <footer class="card-footer">
                       <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
                         <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
-                          <i class="fas fa-download"></i>
-                        </b-tooltip>
-                      </a>
-                      <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
-                        <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
                           <i class="fas fa-external-link-alt"></i>
                         </b-tooltip>
                       </a>
-                    </footer>
+                    <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
+                      <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
+                        <i class="fas fa-download"></i>
+                      </b-tooltip>
+                    </a>
+
+                  </footer>
                 </div>
                 <!-- Media Panel-->
                 <article class="media media-wrap" v-if="settings.panelType === 'media'">
