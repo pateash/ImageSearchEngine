@@ -234,8 +234,8 @@ export default {
     },
     replaceArtworkUrlSize (albumArtwork, newSize) {
       // return albumArtwork.replace('100x100', newSize)
-      // console.log(albumArtwork)
-      return albumArtwork.urls.full
+      console.log(albumArtwork.urls)
+      return albumArtwork.urls.thumb
     },
     toggleNavbar () {
       let scrollBarPosition = window.pageYOffset | document.body.scrollTop

@@ -26,7 +26,7 @@
                     <figure class="image is-4by3">
                       <img
                         :src="replaceArtworkUrlSize(album, '300x250')"
-                        :alt="album.collectionCensoredName">
+                        :alt="album.description">
                     </figure>
                   </div>
                   <div class="card-content">
@@ -206,7 +206,7 @@ export default {
     paginate (albums) {
       let current = this.current
       // let perPage = this.settings.perPage
-      let perPage = 6
+      let perPage = 20
       let from = (current * perPage) - perPage
       let to = (current * perPage)
       return albums.slice(from, to)
