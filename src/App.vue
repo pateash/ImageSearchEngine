@@ -160,7 +160,7 @@ export default {
   methods: {
     searchAlbums (query) {
       if (query) {
-        const payload = { 'url': `/api/search?term=${query}&entity=album&media=music`, 'query': query }
+        const payload = { query }
         this.$store.dispatch('SEARCH_ALBUMS', payload)
       }
       this.$store.commit('SET_PAGE_TYPE', 'search')
@@ -233,7 +233,9 @@ export default {
       this.$store.commit('RESET_ALBUM_TRACKS')
     },
     replaceArtworkUrlSize (albumArtwork, newSize) {
-      return albumArtwork.replace('100x100', newSize)
+      // return albumArtwork.replace('100x100', newSize)
+      console.log(albumArtwork.urls)
+      return albumArtwork.urls.thumb
     },
     toggleNavbar () {
       let scrollBarPosition = window.pageYOffset | document.body.scrollTop

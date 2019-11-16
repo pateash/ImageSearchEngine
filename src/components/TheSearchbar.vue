@@ -6,7 +6,7 @@
         expanded
           v-model="searchQuery"
           :data="filteredDataArray"
-          placeholder="e.g. Eminem"
+          placeholder="e.g. Cat"
           icon="magnify"
           @select="option => selected = option"
           @keyup.enter="onClickSearch"
@@ -91,12 +91,12 @@ export default {
 
 <style>
 .searchbar {
-  padding: 1rem 1.5rem!important;
-  width: 50%;
+  padding: 0!important;
+  width: 30%;
   float:right;
-  position: fixed;
+  position: inherit;
   top: 70px;
-  left:25%;
+  left:30%;
   box-shadow: 0 0 70px 0 rgba(0, 0, 0, 0.3);
   background: #fff;
 }

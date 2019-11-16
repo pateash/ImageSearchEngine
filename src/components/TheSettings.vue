@@ -30,44 +30,44 @@
                 </b-radio-button>
           </b-field>
         </div>
-        <div class="column is-6">
-          <label>Bookmark Icon</label>
-        </div>
-        <div class="column is-6">
-          <b-field>
-                <b-radio-button v-model="settings.bookmarkIcon"
-                    native-value="fa-heart"
-                    type="is-primary">
-                    <b-icon pack="fas" icon="heart"></b-icon>
-                    <span>Heart</span>
-                </b-radio-button>
-                <b-radio-button v-model="settings.bookmarkIcon"
-                    native-value="fa-star"
-                    type="is-primary">
-                    <b-icon pack="fas" icon="star"></b-icon>
-                    <span>Star</span>
-                </b-radio-button>
-          </b-field>
-          </div>
-        <div class="column is-6">
-          <label>Search on youtube icon</label>
-        </div>
-        <div class="column is-6">
-            <b-field>
-                  <b-radio-button v-model="settings.youtubeLink"
-                      native-value="true"
-                      type="is-primary">
-                      <b-icon pack="fas" icon="check"></b-icon>
-                      <span>Show</span>
-                  </b-radio-button>
-                  <b-radio-button v-model="settings.youtubeLink"
-                      native-value="false"
-                      type="is-primary">
-                      <b-icon pack="fas" icon="times"></b-icon>
-                      <span>Hide</span>
-                  </b-radio-button>
-            </b-field>
-        </div>
+<!--        <div class="column is-6">-->
+<!--          <label>Bookmark Icon</label>-->
+<!--        </div>-->
+<!--        <div class="column is-6">-->
+<!--          <b-field>-->
+<!--                <b-radio-button v-model="settings.bookmarkIcon"-->
+<!--                    native-value="fa-heart"-->
+<!--                    type="is-primary">-->
+<!--                    <b-icon pack="fas" icon="heart"></b-icon>-->
+<!--                    <span>Heart</span>-->
+<!--                </b-radio-button>-->
+<!--                <b-radio-button v-model="settings.bookmarkIcon"-->
+<!--                    native-value="fa-star"-->
+<!--                    type="is-primary">-->
+<!--                    <b-icon pack="fas" icon="star"></b-icon>-->
+<!--                    <span>Star</span>-->
+<!--                </b-radio-button>-->
+<!--          </b-field>-->
+<!--          </div>-->
+<!--        <div class="column is-6">-->
+<!--          <label>Search on youtube icon</label>-->
+<!--        </div>-->
+<!--        <div class="column is-6">-->
+<!--            <b-field>-->
+<!--                  <b-radio-button v-model="settings.youtubeLink"-->
+<!--                      native-value="true"-->
+<!--                      type="is-primary">-->
+<!--                      <b-icon pack="fas" icon="check"></b-icon>-->
+<!--                      <span>Show</span>-->
+<!--                  </b-radio-button>-->
+<!--                  <b-radio-button v-model="settings.youtubeLink"-->
+<!--                      native-value="false"-->
+<!--                      type="is-primary">-->
+<!--                      <b-icon pack="fas" icon="times"></b-icon>-->
+<!--                      <span>Hide</span>-->
+<!--                  </b-radio-button>-->
+<!--            </b-field>-->
+<!--        </div>-->
         <div class="column is-6">
           <label>Search Results Per Page</label>
         </div>

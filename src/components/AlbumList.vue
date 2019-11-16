@@ -3,9 +3,9 @@
       <div class="container" style="margin-top:0px;">
         <div class="columns is-multiline is-mobile" v-if="!isAlbumLoading && albums.length > 0">
           <div class="column is-6" >
-            <span class="is-size-5-desktop is-size-6-mobile has-text-grey" v-if="pageType !== 'bookmarks'"> Search Results </span>
+            <span class="is-size-5-desktop is -size-6-mobile has-text-grey" v-if="pageType !== 'bookmarks'"> Search Results </span>
             <span class="is-size-5-desktop is-size-6-mobile has-text-grey" v-else> Bookmarks</span></div>
-          <div class="column is-5 has-text-right "><span class="has-text-grey-light is-size-6"> {{albums.length}} album(s) </span> </div>
+          <div class="column is-5 has-text-right "><span class="has-text-grey-light is-size-6"> {{albums.length}} Image(s) </span> </div>
           <div class="column is-1 has-text-left">
               <b-tooltip type="is-light" label="switch panel view" position="is-top" :active="!isMobile">
               <i @click="onClickUpdateSettings" class="fas  fa-lg" :class="[settings.panelType === 'card' ? 'fa-th-list' : 'fa-th']"></i>
@@ -25,42 +25,38 @@
                   <div class="card-image">
                     <figure class="image is-4by3">
                       <img
-                        :src="replaceArtworkUrlSize(album.artworkUrl100, '300x250')"
-                        :alt="album.collectionCensoredName">
+                        :src="replaceArtworkUrlSize(album, '300x250')"
+                        :alt="album.description">
                     </figure>
                   </div>
                   <div class="card-content">
                     <div class="media">
                       <div class="media-content overflow-content">
                         <div class="title is-size-6-widescreen is-size-6-desktop album-name" ><a v-if="album.collectionId" @click="onClickAlbumName(album.collectionId)">{{album.collectionCensoredName}}</a></div>
-                        <div class="subtitle is-6">{{album.artistName}} <br>
-                        <span class="has-text-grey-light">{{album.primaryGenreName}}</span></div>
+                        <div class="subtitle is-6">Photographed by <a :href="album.user.links.html">{{album.user.first_name}}</a> on <a href="https://unsplash.com/">Unsplash</a> <br>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <footer class="card-footer">
-                      <a :href="album.collectionViewUrl" target="_blank" class="card-footer-item">
-                        <b-tooltip type="is-light" label="Download on iTunes" position="is-top" :active="!isMobile">
-                          <i class="fab fa-itunes-note"></i>
+                      <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
+                        <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
+                          <i class="fas fa-external-link-alt"></i>
                         </b-tooltip>
                       </a>
-                      <span class="heart card-footer-item">
-                        <b-tooltip type="is-light" :label="isInBookmark(album.collectionCensoredName) ? 'click to unbookmarked' : 'click to bookmark'" position="is-top" :active="!isMobile">
-                          <i @click="clickBookmarkAlbum(album)" class="fas fa-lg bookmarkIcon" :class="[{'favorite': isInBookmark(album.collectionCensoredName)}, settings.bookmarkIcon]"></i>
-                        </b-tooltip>
-                      </span>
-                      <a v-if="settings.youtubeLink === 'true'" :href="`https://www.youtube.com/results?search_query=${album.artistName} - ${album.collectionCensoredName}`" target="_blank" class="card-footer-item">
-                        <b-tooltip type="is-light" label="search on youtube" position="is-top" :active="!isMobile">
-                          <i class="fab fa-youtube"></i>
-                        </b-tooltip>
-                      </a>
-                    </footer>
+                    <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
+                      <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
+                        <i class="fas fa-download"></i>
+                      </b-tooltip>
+                    </a>
+
+                  </footer>
                 </div>
                 <!-- Media Panel-->
                 <article class="media media-wrap" v-if="settings.panelType === 'media'">
                   <figure class="media-left">
                     <p class="image ">
-                      <img :src="replaceArtworkUrlSize(album.artworkUrl100, '130x130')" :alt="album.collectionCensoredName">
+                      <img :src="replaceArtworkUrlSize(album, '130x130')" :alt="album.collectionCensoredName">
                     </p>
                   </figure>
                   <div class="media-content">
@@ -206,6 +202,7 @@ export default {
     paginate (albums) {
       let current = this.current
       let perPage = this.settings.perPage
+      // let perPage = 20
       let from = (current * perPage) - perPage
       let to = (current * perPage)
       return albums.slice(from, to)
