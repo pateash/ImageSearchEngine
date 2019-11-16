@@ -160,7 +160,7 @@ export default {
   methods: {
     searchAlbums (query) {
       if (query) {
-        const payload = { 'url': `/api/search?term=${query}&entity=album&media=music`, 'query': query }
+        const payload = { query }
         this.$store.dispatch('SEARCH_ALBUMS', payload)
       }
       this.$store.commit('SET_PAGE_TYPE', 'search')

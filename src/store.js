@@ -3,6 +3,13 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import { Snackbar } from 'buefy/dist/components/snackbar'
 
+// ES Modules syntax
+import fetch from 'node-fetch'
+
+// ES Modules syntax
+import Unsplash, { toJson } from 'unsplash-js'
+global.fetch = fetch
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -129,7 +136,24 @@ export default new Vuex.Store({
       try {
         // show loading animation
         commit('IS_ALBUM_LOADING', true)
-        const { data } = await axios.get(`${payload.url}`)
+
+        // const { data } = await axios.get(`${payload.url}`)
+
+        const unsplash = new Unsplash({ accessKey: 'b005afaaf9ef6f8f7bad69b07fffb9555e582ac5b334d0e6a9bc0d84d95761c0' })
+
+        let data = { results: [] }
+
+        await unsplash.search.photos(payload.query, 1, 100, { orientation: 'portrait' })
+          .then(toJson)
+          .then(json => {
+            // console.log(payload.query)
+            // console.log(json)
+            data.results = json.results
+            // console.log(json.results)
+          })
+        // console.log(x)
+        console.log(data.results)
+
         if (data.results.length === 0) {
           // if search response data results is empty commit search failed and clear the search input
           commit('CLEAR_SEARCH')
