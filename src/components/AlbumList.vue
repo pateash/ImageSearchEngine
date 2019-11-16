@@ -33,25 +33,20 @@
                     <div class="media">
                       <div class="media-content overflow-content">
                         <div class="title is-size-6-widescreen is-size-6-desktop album-name" ><a v-if="album.collectionId" @click="onClickAlbumName(album.collectionId)">{{album.collectionCensoredName}}</a></div>
-                        <div class="subtitle is-6">{{album.artistName}} <br>
-                        <span class="has-text-grey-light">{{album.primaryGenreName}}</span></div>
+                        <div class="subtitle is-6">Photographed by <a :href="album.user.links.html">{{album.user.name}}</a> on <a href="https://unsplash.com/">Unsplash</a> <br>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <footer class="card-footer">
-                      <a :href="album.collectionViewUrl" target="_blank" class="card-footer-item">
-                        <b-tooltip type="is-light" label="Download on iTunes" position="is-top" :active="!isMobile">
-                          <i class="fab fa-itunes-note"></i>
+                      <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
+                        <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
+                          <i class="fas fa-download"></i>
                         </b-tooltip>
                       </a>
-                      <span class="heart card-footer-item">
-                        <b-tooltip type="is-light" :label="isInBookmark(album.collectionCensoredName) ? 'click to unbookmarked' : 'click to bookmark'" position="is-top" :active="!isMobile">
-                          <i @click="clickBookmarkAlbum(album)" class="fas fa-lg bookmarkIcon" :class="[{'favorite': isInBookmark(album.collectionCensoredName)}, settings.bookmarkIcon]"></i>
-                        </b-tooltip>
-                      </span>
-                      <a v-if="settings.youtubeLink === 'true'" :href="`https://www.youtube.com/results?search_query=${album.artistName} - ${album.collectionCensoredName}`" target="_blank" class="card-footer-item">
-                        <b-tooltip type="is-light" label="search on youtube" position="is-top" :active="!isMobile">
-                          <i class="fab fa-youtube"></i>
+                      <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
+                        <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
+                          <i class="fas fa-external-link-alt"></i>
                         </b-tooltip>
                       </a>
                     </footer>
