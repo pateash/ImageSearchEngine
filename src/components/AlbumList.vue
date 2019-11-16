@@ -33,18 +33,18 @@
                     <div class="media">
                       <div class="media-content overflow-content">
                         <div class="title is-size-6-widescreen is-size-6-desktop album-name" ><a v-if="album.collectionId" @click="onClickAlbumName(album.collectionId)">{{album.collectionCensoredName}}</a></div>
-                        <div class="subtitle is-6">Photographed by <a :href="album.user.links.html">{{album.user.first_name}}</a> on <a href="https://unsplash.com/">Unsplash</a> <br>
+                        <div class="subtitle is-6">Photographed by <a :href="album.user.links.html">{{album.user.f}}</a> on <a href="https://unsplash.com/">Unsplash</a> <br>
                         </div>
                       </div>
                     </div>
                   </div>
                   <footer class="card-footer">
-                      <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
-                        <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
+                      <a :href="album.links.html" target="_blank" class="card-footer-item" >
+                        <b-tooltip type="is-light" label="See Full Image" position="is-top" :active="!isMobile">
                           <i class="fas fa-external-link-alt"></i>
                         </b-tooltip>
                       </a>
-                    <a :href="album.urls.raw" target="_blank" class="card-footer-item" download="Download">
+                    <a :href="album.urls.raw" target="_blank" class="card-footer-item" download>
                       <b-tooltip type="is-light" label="Download Image" position="is-top" :active="!isMobile">
                         <i class="fas fa-download"></i>
                       </b-tooltip>
